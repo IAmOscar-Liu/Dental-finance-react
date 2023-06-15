@@ -1,0 +1,122 @@
+body {
+  --primary-bg-color: #f5ded8;
+  --primary-icon-color: rgb(83 67 63);
+  --primary-icon-color-active: rgb(44, 21, 15);
+  --primary-sidebar-text-color: rgb(93 88 87);
+  --primary-current-word-color: #b02f00;
+  --primary-box-shadow: 0 2px 4px 0 rgba(86, 86, 86, 0.7);
+  --primary-header-height: 66px;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+}
+
+aside {
+  flex-basis: 300px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+aside .aside-header {
+  background-color: var(--primary-bg-color);
+  height: var(--primary-header-height);
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
+  box-shadow: var(--primary-box-shadow);
+}
+
+aside .aside-header img {
+  transform: translateY(4px) scale(1.2);
+  filter: invert(0.45);
+}
+
+aside nav {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+aside nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5em;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-container {
+  width: 60px;
+  border-radius: 100000px;
+  padding-block: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside nav a.active .icon-container {
+  background: var(--primary-bg-color);
+}
+
+.icon-container svg {
+  color: var(--primary-icon-color);
+}
+
+aside nav a.active .icon-container svg {
+  color: var(--primary-icon-color-active);
+}
+
+aside nav a span {
+  color: var(--primary-sidebar-text-color);
+}
+
+main {
+  flex-grow: 1;
+  background-color: var(--primary-bg-color);
+}
+
+main header {
+  height: var(--primary-header-height);
+  background-color: #fff;
+  box-shadow: var(--primary-box-shadow);
+  display: flex;
+  align-items: center;
+  color: var(--primary-sidebar-text-color);
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
+main header .header-title {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding-left: 1em;
+}
+
+main header .icon-group {
+  display: flex;
+  padding-inline: .5em;
+}
+
+main header .user-info {
+  padding-right: 1em;
+  display: flex;
+}
+
+main header .icon-container {
+  width: 45px;
+  font-size: 25px;
+}
+
+.page {
+  width: min(90%, 1000px);
+  margin: 1em auto;
+}
